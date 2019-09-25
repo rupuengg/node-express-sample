@@ -1,11 +1,8 @@
 const express = require('express');
-const authRouter = express.Router();
+const router = express.Router();
 
-authRouter.post('/auth', function (req, res, next, val) {
-  console.log('Req', req);
-  console.log('Res', res);
-  console.log('Next', next);
-  console.log('Val', val);
+router.post('/', async (req, res) => {
+  return res.status(200).json({ 'user': 'user' });
 });
 
-module.exports = authRouter;
+module.exports = router;
