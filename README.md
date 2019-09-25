@@ -1,1 +1,1 @@
-# Sample Node Express
+# Sample Node Express Application
