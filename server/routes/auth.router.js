@@ -1,10 +1,9 @@
+// authRoute
+
 const express = require('express');
 const router = express.Router();
+const authController = require('../controllers/auth.controller');
 
-router.post('/', async (req, res) => {
-  const user = req.body;
-
-  return res.status(200).json({ data: user });
-});
+router.post('/', authController.authenticate);
 
 module.exports = router;
