@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     key: DataTypes.STRING,
     title: DataTypes.STRING
   }, {});
-  user_type.associate = function(models) {
+  user_type.associate = function (models) {
     // associations can be defined here
   };
   return user_type;
