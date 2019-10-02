@@ -12,6 +12,16 @@ const authenticate = async (req, res) => {
   }
 };
 
+const logout = async (req, res) => {
+  try {
+    const result = await authService.logout(req.token);
+    return res.status(OK).json(result);
+  } catch (err) {
+    return res.status(err.status || SERVER_ERROR).json(err);
+  }
+};
+
 module.exports = {
-  authenticate
+  authenticate,
+  logout
 };

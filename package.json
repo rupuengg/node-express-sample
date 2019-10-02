@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run start:api",
-    "start:api": "nodemon server/index"
+    "start:api": "nodemon server/index",
+    "mig": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "express-bearer-token": "^2.4.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^1.7.0",
     "sequelize": "^5.19.0",
     "sequelize-cli": "^5.5.1"

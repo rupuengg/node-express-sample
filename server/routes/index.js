@@ -1,10 +1,12 @@
 const express = require('express');
+const bearerToken = require('express-bearer-token');
 const router = express.Router({ caseSensitive: true });
 const authRouter = require('./auth.router');
 const apiURL = `/api/${process.env.API_VERSION}`;
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
+router.use(bearerToken());
 
 router.use(`${apiURL}/auth`, authRouter);
 
