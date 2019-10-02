@@ -4,10 +4,12 @@ const router = express.Router({ caseSensitive: true });
 const authRouter = require('./auth.router');
 const apiURL = `/api/${process.env.API_VERSION}`;
 
+// Middlewares
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 router.use(bearerToken());
 
+// Routes
 router.use(`${apiURL}/auth`, authRouter);
 
 // If URL does't match
